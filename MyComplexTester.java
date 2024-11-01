@@ -27,22 +27,24 @@ public class MyComplexTester
 
         // test dei metodi di MyComplex e stampe a standard output
         System.out.println("a = " + a + " , b = " + b);
-        System.out.println("a + b = " + a.add(b).toString());
-        System.out.println("a - b = " + a.sub(b).toString());
-        System.out.println("a * b = " + a.mult(b).toString());
-        System.out.println("a / b = " + a.div(b).toString());
-        /*System.out.println("1 / a = " + a.inv().tostring());
-        System.out.println("1 / b = " + b.inv().tostring());
-        System.out.println("a^ = " + a.conj().tostring());
-        System.out.println("b^ = " + b.conj().tostring());
-        System.out.println("|a| = " + a.mod().tostring());
-        System.out.println("|b| = " + b.mod().tostring());
+        System.out.println("a + b = " + a.add(b));
+        System.out.println("a - b = " + a.sub(b));
+        System.out.println("a * b = " + a.mult(b));
+        System.out.println("a / b = " + a.div(b));
+        System.out.println("1 / a = " + a.inv());
+        System.out.println("1 / b = " + b.inv());
+        System.out.println("a^ = " + a.conj());
+        System.out.println("b^ = " + b.conj());
+        System.out.println("|a| = " + a.mod());
+        System.out.println("|b| = " + b.mod());
         System.out.println("re(a) = " + a.getRe());
         System.out.println("re(b) = " + b.getRe());
         System.out.println("im(a) = " + a.getIm());
-        System.out.println("im(b) = " + b.getIm());*/
+        System.out.println("im(b) = " + b.getIm());
       
         // chiusura del flusso
         in.close();
    }
 }
+
+

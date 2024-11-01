@@ -70,8 +70,8 @@ public class MyComplex
     public MyComplex div(MyComplex z)
     {
         MyComplex c = new MyComplex();   //da scrivere meglio
-    	c.setRE(getRe()/z.getRe());
-    	c.setIM(getIm()/z.getIm());
+    	c.setRE((getRe()*z.getRe())+(getIm()*z.getIm())/(((z.getRe()*z.getRe())+(z.getIm()*z.getIm()))));
+    	c.setIM((getIm()*z.getRe())-(getRe()*z.getIm())/(((z.getRe()*z.getRe())+(z.getIm()*z.getIm()))));
         //if b != 0 then System.out.println("non si puo dividere per z2=0")
     	return c;
     }
@@ -85,18 +85,18 @@ public class MyComplex
     	c.setIM(-getIm());
     	return c;
     }
-    /*    
+        
     //Calcola l'inverso rispetto al prodotto di un numero complesso
     //inverso del complesso z: 1/z = x/(|z|*|z|) -i*y/(|z|*|z|), per z != 0
     public MyComplex inv()
     {
         MyComplex c = new MyComplex();
-    	c.setRE(1/(getRe()*b.getRe()));
-    	c.setIM(-1/(getIm()*b.getIm()));
+    	c.setRE(getRe()/(getRe()*getRe()+getIm()*getIm()));
+    	c.setIM(getIm()/(getRe()*getRe()+getIm()*getIm()));
         //if b != 0 then System.out.println("non si puo dividere per z2=0")
     	return c;
     }
-    */
+    
 
     
     //Calcola il modulo di questo numero complesso
@@ -107,22 +107,21 @@ public class MyComplex
     }
     
 
-    /*        
     //Confronta con tolleranza due numeri complessi.
     public boolean approxEquals(MyComplex z)
     {
-        return false;  //completare
+        double tolleranza = 1e-10; // Tolleranza molto piccola
+        return Math.abs(getRe() - z.getRe()) < tolleranza && Math.abs(getIm() - z.getIm()) < tolleranza; 
     }
-    */
+    
 
     //Crea una stringa che rappresenta questo numero complesso
     //Formato stringa: parte reale + i*parte immaginaria
     public String toString()
     {
-    return RE+" + I*"+IM;  
+    return RE+" + I * "+IM;  
     }
     
-
 
     //-------- metodi di accesso ----------
           
